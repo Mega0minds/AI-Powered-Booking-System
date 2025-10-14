@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriott Bonvoy Navigation</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'marriott-orange': '#ff6600',
+                        'marriott-orange-light': '#ff8800',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans h-screen overflow-x-hidden">
+    <!-- Beach Background Image -->
+    <div class="fixed top-0 left-0 w-screen h-screen bg-cover bg-center -z-10" style="background-image: url('./images/beautiful2.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-transparent"></div>
+    </div>
+    
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 w-full bg-gray-600/85 backdrop-blur-md border-b border-white/10 z-50 h-[70px] md:h-[60px]">
+        <div class="flex items-center justify-between max-w-6xl mx-auto px-4 md:px-8 h-full">
+            <!-- Brand/Logo -->
+            <div class="flex-shrink-0">
+                <div class="relative flex flex-col items-start">
+                    <div class="text-xs md:text-xs font-normal text-white leading-none mb-0.5 tracking-wider">MARRIOTT</div>
+                    <div class="text-lg md:text-xl font-bold text-white leading-none relative inline-block tracking-wider">
+                        BONVOY<sup class="text-[10px] align-super ml-0.5">™</sup>
+                        <span class="absolute bottom-0.5 left-0 w-4 h-0.5 bg-marriott-orange/90"></span>
+                    </div>
+                    <div class="absolute -bottom-1.5 -left-1 w-4 h-5 bg-gradient-to-br from-marriott-orange to-marriott-orange-light rounded-full opacity-90 -rotate-12" style="clip-path: polygon(20% 0%, 80% 0%, 60% 100%, 40% 100%);"></div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="hidden lg:flex items-center gap-8 flex-1 justify-center mx-8">
+                <a class="text-white no-underline text-sm font-normal py-0 transition-colors duration-300 whitespace-nowrap hover:text-marriott-orange" href="#">Book</a>
+                <a class="text-white no-underline text-sm font-normal py-0 transition-colors duration-300 whitespace-nowrap hover:text-marriott-orange" href="#">Offers</a>
+                <a class="text-white no-underline text-sm font-normal py-0 transition-colors duration-300 whitespace-nowrap hover:text-marriott-orange" href="#">Brands</a>
+                <a class="text-white no-underline text-sm font-normal py-0 transition-colors duration-300 whitespace-nowrap hover:text-marriott-orange" href="#">Credit Cards</a>
+                <a class="text-white no-underline text-sm font-normal py-0 transition-colors duration-300 whitespace-nowrap hover:text-marriott-orange" href="#">Marriott Bonvoy</a>
+                <a class="text-white no-underline text-sm font-normal py-0 transition-colors duration-300 whitespace-nowrap hover:text-marriott-orange" href="#">Meetings & Events</a>
+            </div>
+
+            <!-- Utility Links -->
+            <div class="hidden lg:flex items-center gap-7 mr-6 flex-shrink-0">
+                <a class="flex items-center gap-1.5 text-white no-underline text-sm py-0 transition-colors duration-300 whitespace-nowrap hover:text-marriott-orange" href="#">
+                    <i class="bi bi-question-circle text-sm"></i>
+                    <span>Help</span>
+                </a>
+                <a class="flex items-center gap-1.5 text-white no-underline text-sm py-0 transition-colors duration-300 whitespace-nowrap hover:text-marriott-orange" href="#">
+                    <i class="bi bi-globe text-sm"></i>
+                    <span>English</span>
+                </a>
+                <a class="flex items-center gap-1.5 text-white no-underline text-sm py-0 transition-colors duration-300 whitespace-nowrap hover:text-marriott-orange" href="#">
+                    <i class="bi bi-briefcase text-sm"></i>
+                    <span>Trips</span>
+                </a>
+            </div>
+
+            <!-- Sign In Button -->
+            <button class="bg-transparent border border-white text-white px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-normal flex items-center gap-1.5 transition-all duration-300 cursor-pointer flex-shrink-0 hover:bg-white/10 hover:border-marriott-orange">
+                <i class="bi bi-person text-sm"></i>
+                <span>Sign In or Join</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 min-h-screen pt-[70px] md:pt-[60px]">
+        <!-- Search Widget -->
+        <div class="flex justify-center pt-10 px-5 z-20 relative">
+            <div class="bg-white rounded-3xl p-0 shadow-2xl flex flex-col md:flex-row items-stretch gap-0 max-w-5xl w-full h-auto md:h-[75px] overflow-hidden">
+                <!-- Destination Section -->
+                <div class="flex items-center gap-4 p-4 md:p-8 border-b md:border-b-0 md:border-r border-gray-200 flex-1.2 min-w-0 relative w-full md:w-auto">
+                    <i class="bi bi-geo-alt-fill text-marriott-orange text-lg flex-shrink-0"></i>
+                    <div class="flex flex-col gap-1 min-w-0 flex-1">
+                        <div class="text-[11px] font-semibold text-gray-500 uppercase tracking-widest leading-none">DESTINATION</div>
+                        <div class="text-base font-normal text-gray-800 whitespace-nowrap overflow-hidden text-ellipsis leading-tight">Search city, hotel, address an...</div>
+                    </div>
+                </div>
+
+                <!-- Dates Section -->
+                <div class="flex items-center gap-4 p-4 md:p-8 border-b md:border-b-0 md:border-r border-gray-200 flex-1 min-w-0 relative w-full md:w-auto">
+                    <i class="bi bi-calendar3 text-marriott-orange text-lg flex-shrink-0"></i>
+                    <div class="flex flex-col gap-1 min-w-0 flex-1">
+                        <div class="text-[11px] font-semibold text-gray-500 uppercase tracking-widest leading-none">1 NIGHT</div>
+                        <div class="text-base font-normal text-gray-800 whitespace-nowrap overflow-hidden text-ellipsis leading-tight">Thu, Oct 9 - Fri, Oct 10</div>
+                    </div>
+                </div>
+
+                <!-- Find Hotels Button -->
+                <button class="bg-gray-700 text-white border-none rounded-b-3xl md:rounded-r-3xl md:rounded-b-none px-10 py-4 md:py-0 text-base font-semibold flex items-center gap-2.5 cursor-pointer transition-colors duration-300 flex-shrink-0 w-full md:w-64 justify-center hover:bg-gray-800">
+                    <i class="bi bi-search text-lg"></i>
+                    <span>Find Hotels</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Promotional Content -->
+        <div class="absolute bottom-10 md:bottom-20 left-5 md:left-15 z-20 max-w-lg">
+            <div class="flex flex-col gap-4">
+                <h1 class="text-3xl md:text-5xl font-bold text-white leading-tight m-0 drop-shadow-lg">Seasonal Savings Await</h1>
+                <p class="text-base md:text-lg font-normal text-white leading-snug m-0 drop-shadow-md">Lock in our best packages and deals of the season.</p>
+                <button class="bg-white text-gray-800 border-none rounded-full px-8 py-3 text-base font-semibold cursor-pointer transition-all duration-300 self-center md:self-start shadow-lg hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-xl w-full md:w-auto max-w-xs">Book Now</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Your Next Trip Starts Here Section -->
+    <section class="relative z-10 bg-gray-800 py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Heading -->
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-left">Your Next Trip Starts Here</h2>
+            
+            <!-- Filter Navigation -->
+            <div class="flex flex-wrap gap-8 mb-6">
+                <button class="text-white text-base font-medium border-b-2 border-white pb-1.5 hover:text-gray-300 transition-colors duration-300">Outdoor</button>
+                <button class="text-white text-base font-medium border-b-2 border-transparent pb-1.5 hover:text-gray-300 hover:border-gray-300 transition-colors duration-300">Family</button>
+                <button class="text-white text-base font-medium border-b-2 border-transparent pb-1.5 hover:text-gray-300 hover:border-gray-300 transition-colors duration-300">Iconic</button>
+                <button class="text-white text-base font-medium border-b-2 border-transparent pb-1.5 hover:text-gray-300 hover:border-gray-300 transition-colors duration-300">Pet-Friendly</button>
+            </div>
+            
+            <!-- Separator Line -->
+            <div class="w-full h-px bg-gray-600 mb-8"></div>
+            
+            <!-- Destination Cards -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Marriott Bonvoy Outdoors Card -->
+                <div class="relative group cursor-pointer">
+                    <div class="relative h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Marriott Bonvoy Outdoors - Natural arch formation" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-xs font-normal uppercase tracking-wider mb-2 text-gray-200">Breathtaking Destinations</p>
+                            <h3 class="text-xl md:text-2xl font-bold leading-tight">Marriott Bonvoy Outdoors</h3>
+                        </div>
+                        <div class="absolute bottom-6 right-6 text-white">
+                            <i class="bi bi-arrow-right text-xl group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outdoor Collection Card -->
+                <div class="relative group cursor-pointer">
+                    <div class="relative h-[350px] md:h-[400px] rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Outdoor Collection - Modern cabin with hot tub" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-xs font-normal uppercase tracking-wider mb-2 text-gray-200">New from Marriott Bonvoy</p>
+                            <h3 class="text-xl md:text-2xl font-bold leading-tight">Outdoor Collection</h3>
+                        </div>
+                        <div class="absolute bottom-6 right-6 text-white">
+                            <i class="bi bi-arrow-right text-xl group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activity Cards Section -->
+    <section class="relative z-10 bg-gray-800 py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Activity Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <!-- Hike & Glamp Card -->
+                <div class="relative group cursor-pointer">
+                    <div class="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Hike & Glamp - Rock formation at sunrise" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div class="absolute top-6 left-6 text-white">
+                            <p class="text-xs font-normal uppercase tracking-wider mb-2 text-gray-200">Map Your Next Adventure</p>
+                        </div>
+                        <div class="absolute bottom-6 left-6 text-white flex items-center justify-between w-full pr-6">
+                            <h3 class="text-xl font-bold leading-tight">Hike & Glamp</h3>
+                            <div class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center group-hover:bg-gray-600 transition-colors duration-300">
+                                <i class="bi bi-arrow-right text-white text-sm group-hover:translate-x-0.5 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kayak & Canoe Card -->
+                <div class="relative group cursor-pointer">
+                    <div class="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Kayak & Canoe - Paddling on calm water" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div class="absolute top-6 left-6 text-white">
+                            <p class="text-xs font-normal uppercase tracking-wider mb-2 text-gray-200">Paddle Hidden Coves</p>
+                        </div>
+                        <div class="absolute bottom-6 left-6 text-white flex items-center justify-between w-full pr-6">
+                            <h3 class="text-xl font-bold leading-tight">Kayak & Canoe</h3>
+                            <div class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center group-hover:bg-gray-600 transition-colors duration-300">
+                                <i class="bi bi-arrow-right text-white text-sm group-hover:translate-x-0.5 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ski & Snowboard Card -->
+                <div class="relative group cursor-pointer">
+                    <div class="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Ski & Snowboard - Skiers on mountain slope" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div class="absolute top-6 left-6 text-white">
+                            <p class="text-xs font-normal uppercase tracking-wider mb-2 text-gray-200">Carve Your Own Path</p>
+                        </div>
+                        <div class="absolute bottom-6 left-6 text-white flex items-center justify-between w-full pr-6">
+                            <h3 class="text-xl font-bold leading-tight">Ski & Snowboard</h3>
+                            <div class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center group-hover:bg-gray-600 transition-colors duration-300">
+                                <i class="bi bi-arrow-right text-white text-sm group-hover:translate-x-0.5 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Row Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Vail, Colorado Card -->
+                <div class="relative group cursor-pointer">
+                    <div class="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Vail, Colorado - Snow-covered town at twilight" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white flex items-center justify-between w-full pr-6">
+                            <h3 class="text-xl font-bold leading-tight">Vail, Colorado</h3>
+                            <div class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center group-hover:bg-gray-600 transition-colors duration-300">
+                                <i class="bi bi-arrow-right text-white text-sm group-hover:translate-x-0.5 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vancouver, British Columbia Card -->
+                <div class="relative group cursor-pointer">
+                    <div class="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                             alt="Vancouver, British Columbia - Mountain biking through forest" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white flex items-center justify-between w-full pr-6">
+                            <h3 class="text-xl font-bold leading-tight">Vancouver, British Columbia</h3>
+                            <div class="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center group-hover:bg-gray-600 transition-colors duration-300">
+                                <i class="bi bi-arrow-right text-white text-sm group-hover:translate-x-0.5 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App and Career Cards Section -->
+    <section class="relative z-10 bg-gray-100 py-8 px-6">
+        <div class="max-w-6xl mx-auto space-y-3">
+            <!-- Marriott Bonvoy App Card -->
+            <div class="bg-white rounded-xl shadow-lg p-4 flex items-center justify-between cursor-pointer hover:shadow-xl transition-shadow duration-300">
+                <div class="flex items-center space-x-4">
+                    <!-- Marriott Bonvoy Logo -->
+                    <div class="flex-shrink-0">
+                        <div class="text-xs font-normal text-gray-600 uppercase tracking-wider mb-0.5">MARRIOTT</div>
+                        <div class="text-lg font-bold text-gray-800 uppercase tracking-wider relative inline-block">
+                            <div class="flex">
+                                <span>BON</span>
+                                <div class="ml-2 relative">
+                                    <span>VOY</span>
+                                    <span class="absolute bottom-0 left-1 w-3 h-0.5 bg-marriott-orange"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- App Text -->
+                    <div class="flex-1">
+                        <h3 class="text-base font-bold text-gray-800 mb-0.5">Unlock extraordinary experiences with the Marriott Bonvoy™ app.</h3>
+                        <p class="text-xs text-gray-600">Wherever you go, the app gives you easy access to everything you need for your trip.</p>
+                    </div>
+                </div>
+                
+                <!-- Arrow Icon -->
+                <div class="flex-shrink-0">
+                    <i class="bi bi-arrow-up-right text-lg text-gray-400"></i>
+                </div>
+            </div>
+
+            <!-- Career Opportunities Card -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300">
+                <div class="flex">
+                    <!-- Image -->
+                    <div class="w-1/3 flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Professional at desk with laptop" 
+                             class="w-full h-24 object-cover">
+                    </div>
+                    
+                    <!-- Text Content -->
+                    <div class="flex-1 p-4 flex items-center justify-between">
+                        <div class="flex-1">
+                            <h3 class="text-base font-bold text-gray-800 mb-0.5">Discover Career Opportunities</h3>
+                            <p class="text-xs text-gray-600">EOE / Disability / Veteran</p>
+                        </div>
+                        
+                        <!-- Arrow Icon -->
+                        <div class="flex-shrink-0 ml-4">
+                            <i class="bi bi-arrow-right text-lg text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Navigation Section -->
+    <section class="relative z-10 bg-gray-100 py-12 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Marriott Bonvoy Column -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold text-gray-800">Marriott Bonvoy</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Marriott Bonvoy Overview</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Member Benefits</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Earn Points</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Redeem Points</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Marriott Bonvoy Credit Card</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Marriott Bonvoy Moments</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Marriott Bonvoy Insiders</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Meeting & Events Column -->
+                <div class="space-y-4 border-l border-gray-300 pl-8">
+                    <h3 class="text-lg font-bold text-gray-800">Meeting & Events</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Meeting & Events Overview</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Business Meetings</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Weddings</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Social Events</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Group Travel</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Deals & Packages Column -->
+                <div class="space-y-4 border-l border-gray-300 pl-8">
+                    <h3 class="text-lg font-bold text-gray-800">Deals & Packages</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Deals</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Hotel & Flight Packages</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Cars, Tours, Activities</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">All-Inclusive Resorts & Vacations</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">The Marriott Vacation Clubs Offers</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">The Ritz-Carlton Yacht Collection</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Resorts</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                        <a href="#" class="flex items-center text-gray-700 hover:text-gray-900 transition-colors duration-200">
+                            <span class="text-sm">Marriott Bonvoy Traveler</span>
+                            <span class="ml-auto text-xs">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer Section -->
+    <footer class="relative z-10 bg-gray-800 text-white py-8 px-4 md:py-12 md:px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Main Footer Columns -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8">
+                <!-- Our Company Column -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-bold">Our Company</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">About Marriott International</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Careers</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Investor Relations</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">News</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">CEO Tony Capuano's Blog</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Our Stories</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Digital Accessibility</a>
+                    </div>
+                </div>
+
+                <!-- Work With Us Column -->
+                <div class="space-y-4 sm:mt-8">
+                    <h3 class="text-lg font-bold">Work With Us</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Small & Midsize Business Program</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Travel Professionals</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Group Partners</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Hotel Development</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Affiliates</a>
+                    </div>
+                </div>
+
+                <!-- Find Help Column -->
+                <div class="space-y-4 lg:mt-4">
+                    <h3 class="text-lg font-bold">Find Help</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Help & Contact Us</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Look Up Reservation</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Global Reservation Phone Numbers</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Best Rate Guarantee</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Missing Stay Form</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Site Map</a>
+                    </div>
+                </div>
+
+                <!-- Privacy & Terms Column -->
+                <div class="space-y-4 sm:mt-8 lg:mt-8">
+                    <h3 class="text-lg font-bold">Privacy & Terms</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Privacy Center</a>
+                        <div class="flex items-center space-x-2">
+                            <a href="#" class="text-sm text-gray-300 hover:text-white transition-colors duration-200">Your Privacy Choices</a>
+                            <div class="flex items-center space-x-1">
+                                <div class="w-3 h-3 border border-gray-400 rounded"></div>
+                                <i class="bi bi-x text-gray-400 text-xs"></i>
+                            </div>
+                        </div>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Terms of Use</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Program Terms & Conditions</a>
+                        <a href="#" class="block text-sm text-gray-300 hover:text-white transition-colors duration-200">Sustainability in the Supply Chain</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Separator Line -->
+            <div class="w-full h-px bg-gray-600 mb-6 md:mb-8"></div>
+
+            <!-- Top Destinations Section -->
+            <div class="mb-6 md:mb-8">
+                <div class="flex items-center space-x-2 cursor-pointer hover:text-gray-300 transition-colors duration-200">
+                    <h3 class="text-lg font-bold">Top Destinations</h3>
+                    <i class="bi bi-chevron-down text-sm"></i>
+                </div>
+            </div>
+
+            <!-- Separator Line -->
+            <div class="w-full h-px bg-gray-600 mb-6 md:mb-8"></div>
+
+            <!-- Follow Marriott Bonvoy Section -->
+            <div class="mb-6 md:mb-8">
+                <h3 class="text-lg font-bold mb-4">Follow Marriott Bonvoy</h3>
+                <div class="flex items-center justify-center sm:justify-start space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">
+                        <i class="bi bi-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">
+                        <i class="bi bi-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">
+                        <i class="bi bi-twitter-x text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">
+                        <i class="bi bi-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">
+                        <i class="bi bi-youtube text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="flex flex-col md:flex-row items-center justify-between pt-6 md:pt-8 border-t border-gray-600 space-y-4 md:space-y-0">
+                <div class="text-xs md:text-sm text-gray-400 text-center md:text-left">
+                    © 1996 - 2025 Marriott International, Inc. All rights reserved. Marriott Proprietary Information
+                </div>
+                <div class="flex items-center space-x-2 text-sm text-gray-300">
+                    <i class="bi bi-globe"></i>
+                    <span>English</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
