@@ -156,6 +156,7 @@
         </div>
     </div>
 
+    <script src="js/config.js"></script>
     <script>
         // Get booking ID from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
@@ -168,10 +169,10 @@
             try {
                 console.log('Loading booking details for ID:', bookingId);
                 
-                // Get backend URL (default to localhost:5000 for development)
-                const backendUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-                    ? `http://localhost:5000` 
-                    : `${window.location.protocol}//${window.location.hostname}:5000`;
+                // Get backend URL from config or use Render URL
+                const backendUrl = window.API_CONFIG 
+                    ? window.API_CONFIG.getBackendURL()
+                    : 'https://ai-booking-backend-system.onrender.com';
                 
                 // First, try to get the booking from Firestore via backend
                 const response = await fetch(`${backendUrl}/api/bookings/${bookingId}`);

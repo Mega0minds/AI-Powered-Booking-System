@@ -67,7 +67,8 @@ async function checkBackendStatus() {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 3000);
         
-        const response = await fetch('http://localhost:5000/api/health', {
+        const apiBaseURL = window.API_CONFIG ? window.API_CONFIG.getApiBaseURL() : 'https://ai-booking-backend-system.onrender.com/api';
+        const response = await fetch(`${apiBaseURL}/health`, {
             method: 'GET',
             signal: controller.signal
         });

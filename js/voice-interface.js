@@ -266,7 +266,8 @@ class VoiceInterface {
   async tryForceCompleteBooking() {
     try {
       console.log('Attempting to force-complete booking...');
-      const response = await fetch('http://localhost:5000/api/conversation/force-complete', {
+      const apiBaseURL = window.API_CONFIG ? window.API_CONFIG.getApiBaseURL() : 'https://ai-booking-backend-system.onrender.com/api';
+      const response = await fetch(`${apiBaseURL}/conversation/force-complete`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -333,7 +334,8 @@ class VoiceInterface {
 
   async useBackendTTS(text) {
     try {
-      const response = await fetch('http://localhost:5000/api/voice/speak', {
+      const apiBaseURL = window.API_CONFIG ? window.API_CONFIG.getApiBaseURL() : 'https://ai-booking-backend-system.onrender.com/api';
+      const response = await fetch(`${apiBaseURL}/voice/speak`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

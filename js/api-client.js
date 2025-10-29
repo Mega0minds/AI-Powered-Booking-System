@@ -3,7 +3,9 @@
  */
 class BookingAPI {
     constructor() {
-        this.baseURL = 'http://localhost:5000/api';
+        // Use centralized config for backend URL
+        const backendURL = window.API_CONFIG ? window.API_CONFIG.getApiBaseURL() : 'https://ai-booking-backend-system.onrender.com/api';
+        this.baseURL = backendURL;
         this.conversationId = null;
         this.isConnected = false;
     }
