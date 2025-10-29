@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Booking - Marriott Bonvoy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="https://www.marriott.com/content/dam/marriott/logos/logos-red/logo-marriott-bonvoy.png" alt="Marriott Bonvoy" class="h-8">
+                </div>
+                <div class="text-sm text-gray-600">
+                    <i class="fas fa-shield-alt mr-1"></i>
+                    Secure Checkout
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <!-- Header -->
+            <div class="px-6 py-4 border-b">
+                <div class="flex items-center">
+                    <button onclick="history.back()" class="mr-4">
+                        <i class="fas fa-arrow-left text-gray-600"></i>
+                    </button>
+                    <h1 class="text-2xl font-bold text-gray-900">Review Reservation</h1>
+                </div>
+            </div>
+
+            <div class="p-6">
+                <!-- Hotel Details -->
+                <div class="mb-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-20 h-20 bg-gray-200 rounded-lg overflow-hidden">
+                            <img id="hotel-image" src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop" alt="Hotel" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1">
+                            <h2 id="hotel-name" class="text-lg font-semibold text-gray-900 mb-1">Loading...</h2>
+                            <p id="hotel-location" class="text-gray-600">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stay Information -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-3">STAY INFORMATION</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span id="stay-dates" class="text-gray-700">Loading...</span>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span id="room-guests" class="text-gray-700">Loading...</span>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span id="room-type" class="text-gray-700">Loading...</span>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span id="rate-type" class="text-gray-700">Loading...</span>
+                            <i class="fas fa-chevron-right text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hotel Messages -->
+                <div class="mb-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                    <h4 class="font-semibold text-yellow-800 mb-2">Hotel Messages</h4>
+                    <p class="text-yellow-700 text-sm">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        A tourism fee may be charged at check-out. Please check with the hotel for details.
+                    </p>
+                </div>
+
+                <!-- Summary of Charges -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-3">SUMMARY OF CHARGES</h3>
+                    <div id="charges-breakdown" class="space-y-2">
+                        <!-- Charges will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Payment Form -->
+                <div class="mb-8">
+                    <h2 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-credit-card mr-2 text-red-600"></i>
+                        Payment Information
+                    </h2>
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <form id="payment-form" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+                                    <input type="text" id="expiry-date" placeholder="MM/YY" 
+                                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                                    <input type="text" id="cvv" placeholder="123" 
+                                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Cardholder Name</label>
+                                <input type="text" id="cardholder-name" placeholder="John Doe" 
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Total and Actions -->
+                <div class="border-t pt-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="text-lg font-semibold">Total Amount:</div>
+                        <div class="text-2xl font-bold text-red-600" id="total-amount">$0.00</div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <button id="complete-payment" 
+                                class="flex-1 bg-red-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 flex items-center justify-center">
+                            <span id="book-now-text">Book Now <span id="total-display">0.00 NGN</span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
+            <div class="text-green-500 text-6xl mb-4">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Booking Confirmed!</h3>
+            <p class="text-gray-600 mb-6">Your reservation has been successfully confirmed. A confirmation email has been sent to your email address.</p>
+            <button id="close-success" class="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Get booking ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookingId = urlParams.get('bookingId');
+
+        let bookingData = null;
+
+        // Load booking details from backend API
+        async function loadBookingDetails() {
+            try {
+                console.log('Loading booking details for ID:', bookingId);
+                
+                // Get backend URL (default to localhost:5000 for development)
+                const backendUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+                    ? `http://localhost:5000` 
+                    : `${window.location.protocol}//${window.location.hostname}:5000`;
+                
+                // First, try to get the booking from Firestore via backend
+                const response = await fetch(`${backendUrl}/api/bookings/${bookingId}`);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    bookingData = data.data;
+                    console.log('Booking data loaded:', bookingData);
+                } else {
+                    // If booking not found, use default data
+                    console.log('Booking not found, using default data');
+                    bookingData = {
+                        id: bookingId,
+                        hotelName: "Lagos Marriott Hotel",
+                        location: "Lagos, Nigeria",
+                        checkIn: new Date().toISOString().split('T')[0],
+                        checkOut: new Date(Date.now() + 86400000).toISOString().split('T')[0],
+                        guests: 1,
+                        rooms: 1,
+                        roomType: "Standard Room",
+                        rateType: "Flexible Rate",
+                        pricePerNight: 500,
+                        currency: "NGN",
+                        rating: 5,
+                        stars: 5,
+                        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop"
+                    };
+                }
+                
+                displayBookingDetails();
+            } catch (error) {
+                console.error('Error loading booking:', error);
+                alert('Failed to load booking details');
+            }
+        }
+
+        // Display booking details on the page
+        function displayBookingDetails() {
+            const checkIn = new Date(bookingData.checkIn);
+            const checkOut = new Date(bookingData.checkOut);
+            const nights = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+            const totalAmount = bookingData.pricePerNight * nights;
+
+            // Update hotel details
+            document.getElementById('hotel-name').textContent = bookingData.hotelName || 'Hotel';
+            document.getElementById('hotel-location').textContent = bookingData.location || 'Location';
+            document.getElementById('hotel-image').src = bookingData.image || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=300&fit=crop';
+
+            // Update stay information
+            document.getElementById('stay-dates').textContent = 
+                `${checkIn.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })} - ${checkOut.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })} (${nights} Nights)`;
+            document.getElementById('room-guests').textContent = `${bookingData.rooms || 1} Room, ${bookingData.guests || 1} Guest`;
+            document.getElementById('room-type').textContent = bookingData.roomType || 'Standard Room';
+            document.getElementById('rate-type').textContent = bookingData.rateType || 'Flexible Rate';
+
+            // Update charges breakdown
+            const chargesBreakdown = document.getElementById('charges-breakdown');
+            let chargesHTML = '';
+            
+            for (let i = 0; i < nights; i++) {
+                const date = new Date(checkIn);
+                date.setDate(date.getDate() + i);
+                const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+                const dateStr = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+                
+                chargesHTML += `
+                    <div class="flex justify-between items-center py-2">
+                        <span class="text-gray-700">${dayName}, ${dateStr}</span>
+                        <span class="font-semibold">${bookingData.pricePerNight.toFixed(2)} ${bookingData.currency || 'NGN'}</span>
+                    </div>
+                `;
+            }
+            
+            chargesBreakdown.innerHTML = chargesHTML;
+
+            // Update total amount
+            const currency = bookingData.currency || 'NGN';
+            document.getElementById('total-amount').textContent = `${totalAmount.toFixed(2)} ${currency}`;
+            document.getElementById('total-display').textContent = `${totalAmount.toFixed(2)} ${currency}`;
+        }
+
+        // Initialize event listeners after DOM is loaded
+        function initializeEventListeners() {
+            const completePaymentBtn = document.getElementById('complete-payment');
+            const closeSuccessBtn = document.getElementById('close-success');
+            
+            if (completePaymentBtn) {
+                completePaymentBtn.addEventListener('click', function() {
+                    // In a real application, this would process the payment
+                    // For demo purposes, we'll just show the success modal
+                    const successModal = document.getElementById('success-modal');
+                    if (successModal) {
+                        successModal.classList.remove('hidden');
+                        successModal.classList.add('flex');
+                    }
+                });
+            }
+            
+            if (closeSuccessBtn) {
+                closeSuccessBtn.addEventListener('click', function() {
+                    const successModal = document.getElementById('success-modal');
+                    if (successModal) {
+                        successModal.classList.add('hidden');
+                        successModal.classList.remove('flex');
+                    }
+                    window.close();
+                });
+            }
+        }
+
+        // Initialize the page when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                initializeEventListeners();
+                if (bookingId) {
+                    loadBookingDetails();
+                } else {
+                    const hotelName = document.getElementById('hotel-name');
+                    const hotelLocation = document.getElementById('hotel-location');
+                    if (hotelName) hotelName.textContent = 'No Booking Found';
+                    if (hotelLocation) hotelLocation.textContent = 'Please try again';
+                    alert('No booking ID found. Please try again.');
+                }
+            });
+        } else {
+            // DOM is already loaded
+            initializeEventListeners();
+            if (bookingId) {
+                loadBookingDetails();
+            } else {
+                const hotelName = document.getElementById('hotel-name');
+                const hotelLocation = document.getElementById('hotel-location');
+                if (hotelName) hotelName.textContent = 'No Booking Found';
+                if (hotelLocation) hotelLocation.textContent = 'Please try again';
+                alert('No booking ID found. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
